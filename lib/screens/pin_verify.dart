@@ -4,6 +4,7 @@ import 'package:task_manager_by_ostad/screens/log_in_screen.dart';
 import 'package:task_manager_by_ostad/screens/set_password.dart';
 import 'package:task_manager_by_ostad/utils/app_colors.dart';
 import 'package:task_manager_by_ostad/widgets/screen_bg.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 class Pin_Verify_Screen extends StatefulWidget {
   const Pin_Verify_Screen({super.key});
@@ -33,7 +34,25 @@ class _Pin_Verify_ScreenState extends State<Pin_Verify_Screen> {
                 style: TextStyle(color: Colors.grey, fontWeight: .w600),
               ),
               SizedBox(height: 15),
-              TextFormField(decoration: InputDecoration(hintText: 'Email')),
+              PinCodeTextField(
+                appContext: context, 
+                length: 6,
+                obscureText: true,
+                animationType: AnimationType.fade,
+                keyboardType: TextInputType.number,
+                pinTheme: PinTheme(
+                  fieldWidth: 40,
+                  fieldHeight: 50,
+                  activeFillColor: Colors.white,
+                  inactiveFillColor: Colors.white,
+                  inactiveColor: Colors.grey.shade300,
+                  selectedColor: AppColors.Pcolor,
+                  
+                  shape: PinCodeFieldShape.box,
+                  borderRadius: BorderRadius.circular(8)
+                ),
+                backgroundColor: Colors.transparent,
+                ),
               SizedBox(height: 15),
               FilledButton(
                 onPressed: () {

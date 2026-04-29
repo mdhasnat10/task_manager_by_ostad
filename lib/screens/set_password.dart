@@ -26,9 +26,9 @@ class _Set_Password_ScreenState extends State<Set_Password_Screen> {
                 'Set Password',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               Text(
-                'Minimum length password 8 character with \n Latter and number combination',
+                'Minimum length password 8 character with\n Latter and number combination',
                 style: TextStyle(color: Colors.grey, fontWeight: .w600),
               ),
               SizedBox(height: 15),
