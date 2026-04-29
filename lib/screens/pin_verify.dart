@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager_by_ostad/screens/log_in_screen.dart';
 import 'package:task_manager_by_ostad/screens/set_password.dart';
@@ -43,27 +44,28 @@ class _Pin_Verify_ScreenState extends State<Pin_Verify_Screen> {
               SizedBox(height: 50),
 
               Center(
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => LogInScreen()),
-                    );
-                  },
-                  child: RichText(
-                    text: TextSpan(
-                      text: 'Have an acoount? ',
-                      style: TextStyle(color: Colors.black, fontWeight: .w600),
-                      children: [
-                        TextSpan(
-                          text: ' Sign In',
-                          style: TextStyle(
-                            color: AppColors.Pcolor,
-                            fontWeight: .w600,
-                          ),
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Have an acoount? ',
+                    style: TextStyle(color: Colors.black, fontWeight: .w600),
+                    children: [
+                      TextSpan(
+                        text: ' Sign In',
+                        style: TextStyle(
+                          color: AppColors.Pcolor,
+                          fontWeight: .w600,
                         ),
-                      ],
-                    ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LogInScreen(),
+                              ),
+                            );
+                          }
+                      ),
+                    ],
                   ),
                 ),
               ),

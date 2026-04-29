@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager_by_ostad/screens/email_address.dart';
 import 'package:task_manager_by_ostad/screens/sign_up_screen.dart';
@@ -50,27 +51,25 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ),
 
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Sign_up_Screen(),));
-                      },
-                      child: RichText(
-                        text: TextSpan(
-                          text: 'Don\'t have an acoount? ',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: .w600,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: ' Sign Up',
-                              style: TextStyle(
-                                color: AppColors.Pcolor,
-                                fontWeight: .w600,
-                              ),
-                            ),
-                          ],
+                    RichText(
+                      text: TextSpan(
+                        text: 'Don\'t have an acoount? ',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: .w600,
                         ),
+                        children: [
+                          TextSpan(
+                            text: ' Sign Up',
+                            style: TextStyle(
+                              color: AppColors.Pcolor,
+                              fontWeight: .w600,
+                            ),
+                            recognizer: TapGestureRecognizer()..onTap = (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Sign_up_Screen(),));
+                            }
+                          ),
+                        ],
                       ),
                     ),
                   ],
