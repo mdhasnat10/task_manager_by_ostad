@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager_by_ostad/screens/email_address.dart';
+import 'package:task_manager_by_ostad/screens/main_nav_screen.dart';
 import 'package:task_manager_by_ostad/screens/new_task_screen.dart';
 import 'package:task_manager_by_ostad/screens/sign_up_screen.dart';
 import 'package:task_manager_by_ostad/utils/app_colors.dart';
@@ -35,7 +36,7 @@ class _LogInScreenState extends State<LogInScreen> {
               SizedBox(height: 15),
               FilledButton(
                 onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NewTaskScreen(),));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainNavScreen(),));
                 },
                 child: Icon(Icons.arrow_circle_right_outlined),
               ),
