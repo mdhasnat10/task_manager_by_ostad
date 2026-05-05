@@ -30,19 +30,15 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
               SizedBox(height: 15),
               TextFormField(decoration: InputDecoration(hintText: 'Email')),
               SizedBox(height: 15),
-              TextFormField(decoration: InputDecoration(hintText: 'First Name')),
-              SizedBox(height: 15),
               TextFormField(
-                decoration: InputDecoration(hintText: 'Last Name'),
+                decoration: InputDecoration(hintText: 'First Name'),
               ),
               SizedBox(height: 15),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Mobile'),
-              ),
+              TextFormField(decoration: InputDecoration(hintText: 'Last Name')),
               SizedBox(height: 15),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Password'),
-              ),
+              TextFormField(decoration: InputDecoration(hintText: 'Mobile')),
+              SizedBox(height: 15),
+              TextFormField(decoration: InputDecoration(hintText: 'Password')),
               SizedBox(height: 15),
               FilledButton(
                 onPressed: () {},
@@ -70,7 +66,7 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
                                 builder: (context) => LogInScreen(),
                               ),
                             );
-                          }
+                          },
                       ),
                     ],
                   ),
