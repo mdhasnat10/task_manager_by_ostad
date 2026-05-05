@@ -3,6 +3,7 @@ import 'package:task_manager_by_ostad/screens/cancel-task_screen.dart';
 import 'package:task_manager_by_ostad/screens/completed_task_screen.dart';
 import 'package:task_manager_by_ostad/screens/new_task_screen.dart';
 import 'package:task_manager_by_ostad/screens/progress_task_screen.dart';
+import 'package:task_manager_by_ostad/widgets/tm_appbar.dart';
 
 class MainNavScreen extends StatefulWidget {
   const MainNavScreen({super.key});
@@ -24,6 +25,7 @@ class _MainNavScreenState extends State<MainNavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: TM_Appbar(),
       body: _screen[_selectedIndex],
 
       bottomNavigationBar: NavigationBar(
