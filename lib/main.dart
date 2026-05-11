@@ -6,6 +6,7 @@ import 'package:task_manager_by_ostad/app.dart';
 
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,

@@ -3,10 +3,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager_by_ostad/screens/email_address.dart';
 import 'package:task_manager_by_ostad/screens/log_in_screen.dart';
+import 'package:task_manager_by_ostad/screens/main_nav_screen.dart';
 import 'package:task_manager_by_ostad/utils/app_colors.dart';
 import 'package:task_manager_by_ostad/utils/url.dart';
 import 'package:task_manager_by_ostad/widgets/screen_bg.dart';
 import 'package:http/http.dart' as http;
+
+import 'new_task_screen.dart';
 
 class Sign_up_Screen extends StatefulWidget {
   const Sign_up_Screen({super.key});
@@ -16,7 +19,8 @@ class Sign_up_Screen extends StatefulWidget {
 }
 
 class _Sign_up_ScreenState extends State<Sign_up_Screen> {
-  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  final singUpkey = GlobalKey<FormState>();
+  // final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
@@ -26,6 +30,7 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
   Future<void> signUp() async {
     final response = await http.post(
       Uri.parse(Urls.signUpUrl),
+      headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
         "email": _emailController.text,
         "firstName": _firstNameController.text,
@@ -37,7 +42,28 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
 
     print(response.body);
     print(response.statusCode);
-    if (response.statusCode == 200) {}
+    if (response.statusCode == 200) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Success'), duration: Duration(seconds: 2)),
+      );
+      moveToNewTaskScreen();
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Something wrong'),
+
+          duration: Duration(seconds: 1),
+        ),
+      );
+    }
+  }
+
+  Future<void> moveToNewTaskScreen() async {
+    await Future.delayed(Duration(seconds: 1));
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => LogInScreen()),
+    );
   }
 
   @override
@@ -47,7 +73,7 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
         child: Padding(
           padding: const EdgeInsets.all(25.0),
           child: Form(
-            key: _formkey,
+            key: singUpkey,
             child: Column(
               crossAxisAlignment: .start,
               children: [
@@ -125,7 +151,7 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
                 SizedBox(height: 15),
                 FilledButton(
                   onPressed: () {
-                    if (_formkey.currentState!.validate()) {
+                    if (singUpkey.currentState!.validate()) {
                       signUp();
                     }
                   },

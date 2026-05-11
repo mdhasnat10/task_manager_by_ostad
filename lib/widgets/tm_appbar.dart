@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_by_ostad/screens/log_in_screen.dart';
 import 'package:task_manager_by_ostad/screens/updae_profile_screen.dart';
 import 'package:task_manager_by_ostad/utils/app_colors.dart';
 
-
-class TM_Appbar extends StatelessWidget implements PreferredSize{
+class TM_Appbar extends StatelessWidget implements PreferredSize {
   const TM_Appbar({super.key});
 
   @override
@@ -11,8 +11,11 @@ class TM_Appbar extends StatelessWidget implements PreferredSize{
     return AppBar(
       backgroundColor: AppColors.Pcolor,
       title: InkWell(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => UpdaeProfileScreen(),));
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => UpdaeProfileScreen()),
+          );
         },
         child: Row(
           children: [
@@ -43,17 +46,23 @@ class TM_Appbar extends StatelessWidget implements PreferredSize{
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const LogInScreen()),
+              (route) => false,
+            );
+          },
           icon: Icon(Icons.logout, color: Colors.white),
         ),
       ],
     );
   }
-  
+
   @override
   // TODO: implement child
   Widget get child => throw UnimplementedError();
-  
+
   @override
   // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
