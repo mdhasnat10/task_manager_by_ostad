@@ -98,7 +98,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                   );
                 },
                 separatorBuilder: (context, index) {
-                  return SizedBox(width: 20);
+                  return const SizedBox(width: 20);
                 },
               ),
             ),
@@ -135,7 +135,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
             MaterialPageRoute(builder: (context) => AddNewTaskScreen()),
           );
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

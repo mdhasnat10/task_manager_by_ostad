@@ -55,25 +55,25 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
         child: Padding(
           padding: const EdgeInsets.all(25.0),
           child: Column(
-            crossAxisAlignment: .start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 150),
+              const SizedBox(height: 150),
               Text(
                 'Add New Task',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
                 controller: titleController,
-                decoration: InputDecoration(hintText: 'Title'),
+                decoration: const InputDecoration(hintText: 'Title'),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
                 controller: decriptionController,
                 maxLines: 6,
-                decoration: InputDecoration(hintText: 'Description'),
+                decoration: const InputDecoration(hintText: 'Description'),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               FilledButton(
                 onPressed: () {
                   addNewtask();

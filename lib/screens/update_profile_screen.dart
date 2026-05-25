@@ -85,12 +85,12 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
             crossAxisAlignment: .start,
             // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 100),
+              const SizedBox(height: 100),
               Text(
                 'Update Profile',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Container(
                 height: 50,
                 width: double.infinity,
@@ -111,7 +111,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                           bottomLeft: Radius.circular(8),
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         'Photos',
                         style: TextStyle(color: Colors.white),
                       ),
@@ -120,32 +120,32 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(hintText: 'Email'),
+                decoration: const InputDecoration(hintText: 'Email'),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
                 controller: _firstNameController,
-                decoration: InputDecoration(hintText: 'First Name'),
+                decoration: const InputDecoration(hintText: 'First Name'),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
                 controller: _lastNameController,
-                decoration: InputDecoration(hintText: 'Last Name'),
+                decoration: const InputDecoration(hintText: 'Last Name'),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
                 controller: _mobileController,
-                decoration: InputDecoration(hintText: 'Mobile'),
+                decoration: const InputDecoration(hintText: 'Mobile'),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(hintText: 'Password'),
+                decoration: const InputDecoration(hintText: 'Password'),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               FilledButton(
                 onPressed: () {
                   updateProfile();

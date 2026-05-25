@@ -21,31 +21,39 @@ class _Set_Password_ScreenState extends State<Set_Password_Screen> {
           child: Column(
             crossAxisAlignment: .start,
             children: [
-              SizedBox(height: 150),
+              const SizedBox(height: 150),
               Text(
                 'Set Password',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Minimum length password 8 character with\n Latter and number combination',
-                style: TextStyle(color: Colors.grey, fontWeight: .w600),
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-              SizedBox(height: 15),
-              TextFormField(decoration: InputDecoration(hintText: 'Password')),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
-                decoration: InputDecoration(hintText: 'Confirm Password'),
+                decoration: const InputDecoration(hintText: 'Password'),
               ),
-              SizedBox(height: 15),
-              FilledButton(onPressed: () {}, child: Text('Confirm')),
-              SizedBox(height: 50),
+              const SizedBox(height: 15),
+              TextFormField(
+                decoration: const InputDecoration(hintText: 'Confirm Password'),
+              ),
+              const SizedBox(height: 15),
+              FilledButton(onPressed: () {}, child: const Text('Confirm')),
+              const SizedBox(height: 50),
 
               Center(
                 child: RichText(
                   text: TextSpan(
                     text: 'Have an acoount? ',
-                    style: TextStyle(color: Colors.black, fontWeight: .w600),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
                     children: [
                       TextSpan(
                         text: ' Sign In',

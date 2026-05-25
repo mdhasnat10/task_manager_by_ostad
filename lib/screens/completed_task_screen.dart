@@ -35,9 +35,9 @@ class _CompletedTaskScreenState extends State<CompletedTaskScreen> {
       }
       ;
     } else {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: const Text('Failed to fetch completed tasks... ')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: const Text('Failed to fetch completed tasks... ')),
+      );
     }
 
     setState(() {

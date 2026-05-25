@@ -22,32 +22,42 @@ class _EmailAddressState extends State<EmailAddress> {
           child: Column(
             crossAxisAlignment: .start,
             children: [
-              SizedBox(height: 150),
+              const SizedBox(height: 150),
               Text(
                 'Your Email Address',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 15),
-              Text(
+              const SizedBox(height: 15),
+              const Text(
                 'A 6 Digit verification pin will send to your\n email address',
                 style: TextStyle(color: Colors.grey, fontWeight: .w600),
               ),
-              SizedBox(height: 15),
-              TextFormField(decoration: InputDecoration(hintText: 'Email')),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
+              TextFormField(
+                decoration: const InputDecoration(hintText: 'Email'),
+              ),
+              const SizedBox(height: 15),
               FilledButton(
                 onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Pin_Verify_Screen(),));
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Pin_Verify_Screen(),
+                    ),
+                  );
                 },
-                child: Icon(Icons.arrow_circle_right_outlined,),
+                child: const Icon(Icons.arrow_circle_right_outlined),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
 
               Center(
                 child: RichText(
                   text: TextSpan(
                     text: 'Have an acoount? ',
-                    style: TextStyle(color: Colors.black, fontWeight: .w600),
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: .w600,
+                    ),
                     children: [
                       TextSpan(
                         text: ' Sign In',
@@ -63,7 +73,7 @@ class _EmailAddressState extends State<EmailAddress> {
                                 builder: (context) => LogInScreen(),
                               ),
                             );
-                          }
+                          },
                       ),
                     ],
                   ),

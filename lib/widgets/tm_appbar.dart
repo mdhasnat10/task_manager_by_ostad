@@ -24,7 +24,7 @@ class TM_Appbar extends StatelessWidget implements PreferredSize {
               radius: 25,
               backgroundImage: AssetImage('assets/images/mypicture.jpg'),
             ),
-            SizedBox(width: 15),
+            const SizedBox(width: 15),
             Column(
               crossAxisAlignment: .start,
               children: [
@@ -34,7 +34,7 @@ class TM_Appbar extends StatelessWidget implements PreferredSize {
                     context,
                   ).textTheme.titleSmall!.copyWith(color: Colors.white),
                 ),
-                 Text(
+                Text(
                   AuthController.userData!.email.toString() ?? '',
                   style: Theme.of(
                     context,

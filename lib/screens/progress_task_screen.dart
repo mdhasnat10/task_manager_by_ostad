@@ -14,16 +14,14 @@ class ProgressTaskScreen extends StatefulWidget {
 }
 
 class _ProgressTaskScreenState extends State<ProgressTaskScreen> {
-
-
-@override
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
     getAllNewTask();
   }
 
-  List<TaskModel> allTask =[];
+  List<TaskModel> allTask = [];
 
   Future<void> getAllNewTask() async {
     final ApiResponse response = await ApiCaller.getRequest(
@@ -49,9 +47,6 @@ class _ProgressTaskScreenState extends State<ProgressTaskScreen> {
     });
   }
 
-
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,12 +55,12 @@ class _ProgressTaskScreenState extends State<ProgressTaskScreen> {
         itemCount: allTask.length,
         itemBuilder: (context, index) {
           return Task_Card(
-                  taskModel: allTask[index],
-                  CardColor: Colors.purple,
-                  refreshParent: () {
-                    getAllNewTask();
-                  },
-                );
+            taskModel: allTask[index],
+            CardColor: Colors.purple,
+            refreshParent: () {
+              getAllNewTask();
+            },
+          );
         },
       ),
     );

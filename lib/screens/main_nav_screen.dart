@@ -19,7 +19,7 @@ class _MainNavScreenState extends State<MainNavScreen> {
     NewTaskScreen(),
     ProgressTaskScreen(),
     CompletedTaskScreen(),
-    CanceltaskScreen()
+    CanceltaskScreen(),
   ];
 
   @override
@@ -35,14 +35,23 @@ class _MainNavScreenState extends State<MainNavScreen> {
             _selectedIndex = index;
           });
         },
-        
-        destinations: [
-         NavigationDestination(icon: Icon(Icons.task), label: 'New'),
-         NavigationDestination(icon: Icon(Icons.refresh), label: 'Progress'),
-         NavigationDestination(icon: Icon(Icons.done_all_outlined), label: 'Completed'),
-         NavigationDestination(icon: Icon(Icons.cancel), label: 'Cancel'),
 
-      ]),
+        destinations: [
+          NavigationDestination(icon: const Icon(Icons.task), label: 'New'),
+          NavigationDestination(
+            icon: const Icon(Icons.refresh),
+            label: 'Progress',
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.done_all_outlined),
+            label: 'Completed',
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.cancel),
+            label: 'Cancel',
+          ),
+        ],
+      ),
     );
   }
 }

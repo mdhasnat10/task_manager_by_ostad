@@ -65,15 +65,15 @@ class _LogInScreenState extends State<LogInScreen> {
             child: Column(
               crossAxisAlignment: .start,
               children: [
-                SizedBox(height: 150),
+                const SizedBox(height: 150),
                 Text(
                   'Get Started With',
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 TextFormField(
                   controller: _emailController,
-                  decoration: InputDecoration(hintText: 'Email'),
+                  decoration: const InputDecoration(hintText: 'Email'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Enter Email';
@@ -82,7 +82,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     }
                   },
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 TextFormField(
                   obscureText: true,
                   controller: _passwordController,
@@ -94,22 +94,19 @@ class _LogInScreenState extends State<LogInScreen> {
                     }
                   },
 
-                  decoration: InputDecoration(hintText: 'Password'),
+                  decoration: const InputDecoration(hintText: 'Password'),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 FilledButton(
                   onPressed: () {
-
-                    if(signInkey.currentState!.validate()){
+                    if (signInkey.currentState!.validate()) {
                       _signIn();
                     }
-
-                    
                   },
-                  child: Icon(Icons.arrow_circle_right_outlined),
+                  child: const Icon(Icons.arrow_circle_right_outlined),
                 ),
 
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 Center(
                   child: Column(
                     children: [
@@ -122,11 +119,11 @@ class _LogInScreenState extends State<LogInScreen> {
                             ),
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           'Forget password?',
                           style: TextStyle(
                             color: Colors.grey,
-                            fontWeight: .w600,
+                            fontWeight: FontWeight.w600,
                             fontSize: 12,
                           ),
                         ),

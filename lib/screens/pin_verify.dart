@@ -23,19 +23,22 @@ class _Pin_Verify_ScreenState extends State<Pin_Verify_Screen> {
           child: Column(
             crossAxisAlignment: .start,
             children: [
-              SizedBox(height: 150),
+              const SizedBox(height: 150),
               Text(
                 'Pin Verification',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 15),
-              Text(
+              const SizedBox(height: 15),
+              const Text(
                 'A 6 Digit verification pin will send to your\n email address',
-                style: TextStyle(color: Colors.grey, fontWeight: .w600),
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               PinCodeTextField(
-                appContext: context, 
+                appContext: context,
                 length: 6,
                 obscureText: true,
                 animationType: AnimationType.fade,
@@ -47,20 +50,25 @@ class _Pin_Verify_ScreenState extends State<Pin_Verify_Screen> {
                   inactiveFillColor: Colors.white,
                   inactiveColor: Colors.grey.shade300,
                   selectedColor: AppColors.Pcolor,
-                  
+
                   shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(8)
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 backgroundColor: Colors.transparent,
-                ),
+              ),
               SizedBox(height: 15),
               FilledButton(
                 onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Set_Password_Screen(),));
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Set_Password_Screen(),
+                    ),
+                  );
                 },
-                child: Text('Verify'),
+                child: const Text('Verify'),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
 
               Center(
                 child: RichText(
@@ -82,7 +90,7 @@ class _Pin_Verify_ScreenState extends State<Pin_Verify_Screen> {
                                 builder: (context) => LogInScreen(),
                               ),
                             );
-                          }
+                          },
                       ),
                     ],
                   ),

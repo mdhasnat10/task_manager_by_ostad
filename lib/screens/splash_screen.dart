@@ -19,19 +19,17 @@ class _SplashScreenState extends State<SplashScreen> {
     await AuthController.getUserData();
     final bool isLogin = await AuthController.isUserLogin();
 
-
-    if(isLogin){
+    if (isLogin) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => MainNavScreen()),
       );
-    }else{
+    } else {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => LogInScreen()),
       );
     }
-    
   }
 
   @override

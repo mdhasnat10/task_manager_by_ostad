@@ -31,8 +31,7 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
   final TextEditingController _mobileController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  
-    Future<void> signUp() async {
+  Future<void> signUp() async {
     Map<String, dynamic> resquestBody = {
       "email": _emailController.text,
       "firstName": _firstNameController.text,
@@ -50,7 +49,6 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => LogInScreen()),
-
       );
       ScaffoldMessenger.of(
         context,
@@ -61,7 +59,6 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
       ).showSnackBar(SnackBar(content: Text(response.responseData['data'])));
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -73,14 +70,14 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
             key: singUpkey,
             child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: .start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 80),
+                  const SizedBox(height: 80),
                   Text(
                     'Join With Us',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: _emailController,
@@ -91,9 +88,9 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
                         return null;
                       }
                     },
-                    decoration: InputDecoration(hintText: 'Email'),
+                    decoration: const InputDecoration(hintText: 'Email'),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   TextFormField(
                     keyboardType: TextInputType.text,
                     controller: _firstNameController,
@@ -104,9 +101,9 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
                         return null;
                       }
                     },
-                    decoration: InputDecoration(hintText: 'First Name'),
+                    decoration: const InputDecoration(hintText: 'First Name'),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   TextFormField(
                     keyboardType: TextInputType.text,
                     controller: _lastNameController,
@@ -117,9 +114,9 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
                         return null;
                       }
                     },
-                    decoration: InputDecoration(hintText: 'Last Name'),
+                    decoration: const InputDecoration(hintText: 'Last Name'),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   TextFormField(
                     keyboardType: TextInputType.number,
                     controller: _mobileController,
@@ -130,9 +127,9 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
                         return null;
                       }
                     },
-                    decoration: InputDecoration(hintText: 'Mobile'),
+                    decoration: const InputDecoration(hintText: 'Mobile'),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   TextFormField(
                     keyboardType: TextInputType.text,
                     obscureText: true,
@@ -144,24 +141,27 @@ class _Sign_up_ScreenState extends State<Sign_up_Screen> {
                         return null;
                       }
                     },
-                    decoration: InputDecoration(hintText: 'Password'),
+                    decoration: const InputDecoration(hintText: 'Password'),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   FilledButton(
                     onPressed: () {
                       if (singUpkey.currentState!.validate()) {
                         signUp();
                       }
                     },
-                    child: Icon(Icons.arrow_circle_right_outlined),
+                    child: const Icon(Icons.arrow_circle_right_outlined),
                   ),
-              
-                  SizedBox(height: 50),
+
+                  const SizedBox(height: 50),
                   Center(
                     child: RichText(
                       text: TextSpan(
                         text: 'Have an acoount? ',
-                        style: TextStyle(color: Colors.black, fontWeight: .w600),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: .w600,
+                        ),
                         children: [
                           TextSpan(
                             text: ' Sign In',

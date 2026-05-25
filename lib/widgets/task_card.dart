@@ -35,7 +35,7 @@ class _Task_CardState extends State<Task_Card> {
       Navigator.pop(context);
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content:  const Text('Task Status Updated')));
+      ).showSnackBar(SnackBar(content: const Text('Task Status Updated')));
       ;
     } else {
       Navigator.pop(context);
@@ -49,7 +49,7 @@ class _Task_CardState extends State<Task_Card> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title:  const Text('Change Task Status'),
+        title: const Text('Change Task Status'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -127,17 +127,17 @@ class _Task_CardState extends State<Task_Card> {
           subtitle: Column(
             crossAxisAlignment: .start,
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 widget.taskModel.description,
                 style: TextStyle(color: Colors.grey, fontSize: 12),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
                 'Date: ${widget.taskModel.createdDate}',
                 style: TextStyle(fontSize: 12, fontWeight: .w500),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   Chip(
@@ -154,11 +154,11 @@ class _Task_CardState extends State<Task_Card> {
 
                   Spacer(),
 
-                IconButton(
+                  IconButton(
                     onPressed: () {
                       showChangedStatusDialog();
                     },
-                    icon:  Icon(Icons.edit, color: AppColors.Pcolor),
+                    icon: Icon(Icons.edit, color: AppColors.Pcolor),
                   ),
                   IconButton(
                     onPressed: () {},
