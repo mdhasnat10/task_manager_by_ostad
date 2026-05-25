@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_by_ostad/controller/auth_controller.dart';
 import 'package:task_manager_by_ostad/screens/log_in_screen.dart';
-import 'package:task_manager_by_ostad/screens/updae_profile_screen.dart';
+import 'package:task_manager_by_ostad/screens/update_profile_screen.dart';
 import 'package:task_manager_by_ostad/utils/app_colors.dart';
 
 class TM_Appbar extends StatelessWidget implements PreferredSize {
@@ -14,7 +15,7 @@ class TM_Appbar extends StatelessWidget implements PreferredSize {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => UpdaeProfileScreen()),
+            MaterialPageRoute(builder: (context) => UpdateProfileScreen()),
           );
         },
         child: Row(
@@ -28,13 +29,13 @@ class TM_Appbar extends StatelessWidget implements PreferredSize {
               crossAxisAlignment: .start,
               children: [
                 Text(
-                  'Md Abu Hasnat',
+                  '${AuthController.userData?.firstName ?? ''} ${AuthController.userData?.lastName ?? ''}',
                   style: Theme.of(
                     context,
                   ).textTheme.titleSmall!.copyWith(color: Colors.white),
                 ),
-                Text(
-                  'mdhasnat.ju@gmail.com',
+                 Text(
+                  AuthController.userData!.email.toString() ?? '',
                   style: Theme.of(
                     context,
                   ).textTheme.bodySmall!.copyWith(color: Colors.white),
@@ -53,7 +54,7 @@ class TM_Appbar extends StatelessWidget implements PreferredSize {
               (route) => false,
             );
           },
-          icon: Icon(Icons.logout, color: Colors.white),
+          icon: const Icon(Icons.logout, color: Colors.white),
         ),
       ],
     );

@@ -12,7 +12,7 @@ class Task_Manager_by_Ostad extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         textTheme: TextTheme(
-          titleLarge: TextStyle(fontSize: 28, fontWeight: .w800),
+          titleLarge: TextStyle(fontSize: 25, fontWeight: .w800),
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,

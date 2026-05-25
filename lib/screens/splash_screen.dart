@@ -16,7 +16,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> moveToNextScreen() async {
     await Future.delayed(Duration(seconds: 10));
+    await AuthController.getUserData();
     final bool isLogin = await AuthController.isUserLogin();
+
 
     if(isLogin){
       Navigator.pushReplacement(

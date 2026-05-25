@@ -9,7 +9,7 @@ class TaskContByStatus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      width: 75,
+      width: 96,
       
       decoration: BoxDecoration(
         color: Colors.white,
@@ -26,7 +26,8 @@ class TaskContByStatus extends StatelessWidget {
         child: Column(
           children: [
             Text(count.toString(), style: Theme.of(context).textTheme.titleLarge),
-            Text(title),
+             SizedBox(height: 5),
+            Text(title, style: TextStyle(color: Colors.black, fontSize: 11),)
           ],
         ),
       ),

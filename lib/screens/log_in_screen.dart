@@ -21,13 +21,13 @@ class LogInScreen extends StatefulWidget {
 
 class _LogInScreenState extends State<LogInScreen> {
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordCOntroller = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   final signInkey = GlobalKey<FormState>();
 
   Future<void> _signIn() async {
     Map<String, dynamic> resquestBody = {
       "email": _emailController.text,
-      "password": _passwordCOntroller.text,
+      "password": _passwordController.text,
     };
 
     final ApiResponse response = await ApiCaller.postRequest(
@@ -85,7 +85,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 SizedBox(height: 15),
                 TextFormField(
                   obscureText: true,
-                  controller: _passwordCOntroller,
+                  controller: _passwordController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Enter Password';

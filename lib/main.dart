@@ -3,8 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager_by_ostad/app.dart';
 
-
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
@@ -14,4 +12,3 @@ void main() {
     ),
   );
 }
-
