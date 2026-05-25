@@ -61,7 +61,7 @@ class _Set_Password_ScreenState extends State<Set_Password_Screen> {
                                 builder: (context) => LogInScreen(),
                               ),
                             );
-                          }
+                          },
                       ),
                     ],
                   ),
